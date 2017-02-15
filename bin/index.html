@@ -22,15 +22,20 @@
 
         timelineObj = {
           /* ETIQUETA EN LA QUE SE INICIA LA ANIMACION */
-          initLabel: 'step_2',
-          /* MÉTODO PARA PAUSAR LA ANIMACIÓN EN UNA ETIQUETA CONCRETA (EN FALSE NO HACE LA PAUSA)*/
-          addPauseAt: false,
+          initLabel: 'step_1',
+
+          /* MÉTODO PARA PAUSAR LA ANIMACIÓN EN UN SEGUNDO O EN UNA ETIQUETA CONCRETA (EN FALSE NO HACE LA PAUSA)*/
+          addPauseAt: undefined,
+
           /* NUMERO DE VUELTAS DEL BANNER (-1 SERÍA INFINITO) */
           loopIteration: -1,
+
           /* ETIQUETA EN LA QUE SE INICIA LA ANIMACION AL HACER EL LOOP */
           loopLabelInit: 'step_2',
+
           /* ETIQUETA EN LA QUE SE PARA EL BANNER AL HACER EL ÚLTIMO LOOP */
-          //loopLabelEnd: 'step_27',
+          loopLabelEnd: 'step_27',
+
           /* TIMELINE DEL BANNER */
           arrayTween:[
             {type: 'to', id: '#cover', time:.5, prop: {autoAlpha:0}, delay: '+=0'},

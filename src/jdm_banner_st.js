@@ -68,7 +68,6 @@ var JDMBanner = (function(){
       var divTemp = document.createElement('div');
       divTemp.classList.add('frame');
       divTemp.setAttribute('id',arrayIdFrames[ii]);
-      //divTemp.setAttribute('id','frame' + (ii+1));
       this.containerJDMBanner.appendChild(divTemp);
       this.arrayFrames.push(divTemp);
 
@@ -90,9 +89,7 @@ var JDMBanner = (function(){
 
   JDMBanner.prototype.imgLoaded = function(){
     JDMBanner.scope.counterImg++;
-    if(JDMBanner.scope.counterImg == JDMBanner.scope.totalImg) {
-      JDMBanner.scope.createTimeLine();
-    };
+    if(JDMBanner.scope.counterImg == JDMBanner.scope.totalImg) JDMBanner.scope.createTimeLine();
   };
 
   JDMBanner.prototype.createTimeLine = function(){
@@ -133,19 +130,13 @@ var JDMBanner = (function(){
     if(JDMBanner.scope.timelineData.initLabel == undefined || JDMBanner.scope.timelineData.initLabel == false) JDMBanner.scope.tl.resume(0);
     else JDMBanner.scope.tl.resume(JDMBanner.scope.timelineData.initLabel);
 
-    if(JDMBanner.scope.timelineData.addPauseAt == undefined || JDMBanner.scope.timelineData.addPauseAt == false) {
-      console.log('addPause undefined');
-    } else {
-      console.log('addPause defined');
-      JDMBanner.scope.addPauseAt(JDMBanner.scope.timelineData.addPauseAt);
-    }
+    if(JDMBanner.scope.timelineData.addPauseAt != undefined) JDMBanner.scope.addPauseAt(JDMBanner.scope.timelineData.addPauseAt);
   };
 
   JDMBanner.prototype.endTimeLine = function(numRepeat, label){
-    if(numRepeat < 2) return;
-    if(numRepeat == -1 || numRepeat == undefined) {
-      JDMBanner.scope.tl.resume(0);
-    } else{
+    if(numRepeat == 1) return;
+    else if(numRepeat == -1 || numRepeat == undefined) JDMBanner.scope.tl.resume(0);
+    else{
       JDMBanner.scope.iteration++;
       if(numRepeat > 1 && JDMBanner.scope.iteration == numRepeat - 1) {
         var lastLabel;
@@ -154,7 +145,6 @@ var JDMBanner = (function(){
           JDMBanner.scope.lastLabelName = lastLabel.name;
         } else {
           lastLabel = JDMBanner.scope.timelineData.loopLabelEnd;
-          console.log(lastLabel)
           JDMBanner.scope.lastLabelName = lastLabel;
         }
         JDMBanner.scope.tl.addPause(JDMBanner.scope.lastLabelName);
@@ -164,8 +154,8 @@ var JDMBanner = (function(){
     label != undefined || label == false ? JDMBanner.scope.tl.resume(label) : JDMBanner.scope.tl.resume(0);
   };
 
-  JDMBanner.prototype.addPauseAt = function(label){
-    JDMBanner.scope.tl.addPause(label);
+  JDMBanner.prototype.addPauseAt = function(labelOrSecond){
+    JDMBanner.scope.tl.addPause(labelOrSecond);
   };
 
   JDMBanner.prototype.addListeners = function(){
