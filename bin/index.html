@@ -6,37 +6,45 @@
     <title>HTML5 Banner Standart Template</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 <body>
-    <!-- CUSTOMIZAR LOS DATA -->
+    <!-- YOU MUST CUSTOMIZE DATA BANNER -->
     <div id="container-banner" data-w="300" data-h="250" data-bg-color="#FFFFFF" data-border="1px solid #C5C5C5" data-cover="true"></div>
 
     <script type="text/javascript" src="../lib//TweenMax.min.js"></script>
     <script type="text/javascript" src="assets/js/jdm_banner_st.min.js"></script>
     <script type="text/javascript">
-    ///////   CUSTOMIZAR EL OBJETO FRAME Y EL OBJETO TIMELINE  /////
-        var banner, frameObj, timelineObj;
+
+        var banner, imgPath, frameObj, timelineObj;
+
+        ///////   YOU MUST CUSTOMIZE IMAGES PATH ///////
+
+        imgPath = 'assets/img/';
+
+        ///////   YOU MUST CUSTOMIZE FRAME OBJECT ///////
 
         frameObj = {
             frame2:['bg.png','txt1.png','txt2.png','txt3.png','txt4.png','txt5.png','txt6.png','txt7.png','logo.png'],
             frame1:['white_sup.png','white_inf.png','black.png','grey.png']
         };
 
+        ///////   YOU MUST CUSTOMIZE TIMELINE OBJECT ///////
+
         timelineObj = {
-          /* ETIQUETA EN LA QUE SE INICIA LA ANIMACION */
+          /* TAG IN WHICH BANNER STARTS */
           initLabel: 'step_1',
 
-          /* MÉTODO PARA PAUSAR LA ANIMACIÓN EN UN SEGUNDO O EN UNA ETIQUETA CONCRETA (EN FALSE NO HACE LA PAUSA)*/
+          /* METHOD FOR PAUSING BANNER (IN SECONDS OR USING TAGS)*/
           addPauseAt: undefined,
 
-          /* NUMERO DE VUELTAS DEL BANNER (-1 SERÍA INFINITO) */
+          /* LOOPS NUMBER (-1 IS INFINITE) */
           loopIteration: -1,
 
-          /* ETIQUETA EN LA QUE SE INICIA LA ANIMACION AL HACER EL LOOP */
+          /* TAG IN WHICH TIMELINE START WHEN THE LOOP STARTS */
           loopLabelInit: 'step_2',
 
-          /* ETIQUETA EN LA QUE SE PARA EL BANNER AL HACER EL ÚLTIMO LOOP */
+          /* TAG IN WHICH BANNER STOP WHEN THE LAST LOOP ENDS */
           loopLabelEnd: 'step_27',
 
-          /* TIMELINE DEL BANNER */
+          /* BANNER TIMELINE */
           arrayTween:[
             {type: 'to', id: '#cover', time:.5, prop: {autoAlpha:0}, delay: '+=0'},
             {type: 'fromTo', id: '#white_sup', time:.8, propInit: {x:-10, y:-400, opacity:1}, propEnd: {x:-20, y:-205, opacity:1, ease:Power3.easeOut}, delay: '+=0'},
@@ -69,7 +77,7 @@
         };
 
         document.addEventListener('DOMContentLoaded', function(event) {
-            banner = new JDMBanner(document.getElementById('container-banner'),frameObj,timelineObj);
+            banner = new JDMBanner(document.getElementById('container-banner'),imgPath,frameObj,timelineObj);
         });
     </script>
 </body>
