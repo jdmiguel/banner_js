@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>HTML5 Banner Standart Template</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+<body>
+    <!-- CUSTOMIZAR LOS DATA -->
+    <div id="container-banner" data-w="300" data-h="250" data-bg-color="#FFFFFF" data-border="1px solid #C5C5C5" data-cover="true"></div>
+
+    <script type="text/javascript" src="../lib//TweenMax.min.js"></script>
+    <script type="text/javascript" src="assets/js/jdm_banner_st.min.js"></script>
+    <script type="text/javascript">
+    ///////   CUSTOMIZAR EL OBJETO FRAME Y EL OBJETO TIMELINE  /////
+        var banner, frameObj, timelineObj;
+
+        frameObj = {
+            frame2:['bg.png','txt1.png','txt2.png','txt3.png','txt4.png','txt5.png','txt6.png','txt7.png','logo.png'],
+            frame1:['white_sup.png','white_inf.png','black.png','grey.png']
+        };
+
+        timelineObj = {
+          /* ETIQUETA EN LA QUE SE INICIA LA ANIMACION */
+          initLabel: 'step_2',
+          /* MÉTODO PARA PAUSAR LA ANIMACIÓN EN UNA ETIQUETA CONCRETA (EN FALSE NO HACE LA PAUSA)*/
+          addPauseAt: false,
+          /* NUMERO DE VUELTAS DEL BANNER (-1 SERÍA INFINITO) */
+          loopIteration: -1,
+          /* ETIQUETA EN LA QUE SE INICIA LA ANIMACION AL HACER EL LOOP */
+          loopLabelInit: 'step_2',
+          /* ETIQUETA EN LA QUE SE PARA EL BANNER AL HACER EL ÚLTIMO LOOP */
+          //loopLabelEnd: 'step_27',
+          /* TIMELINE DEL BANNER */
+          arrayTween:[
+            {type: 'to', id: '#cover', time:.5, prop: {autoAlpha:0}, delay: '+=0'},
+            {type: 'fromTo', id: '#white_sup', time:.8, propInit: {x:-10, y:-400, opacity:1}, propEnd: {x:-20, y:-205, opacity:1, ease:Power3.easeOut}, delay: '+=0'},
+            {type: 'fromTo', id: '#white_inf', time:.7, propInit: {x:-10, y:400, opacity:1}, propEnd: {x:-20, y:110, opacity:1, ease:Power3.easeOut}, delay: '-=.8'},
+            {type: 'fromTo', id: '#black', time:.7, propInit: {x:320, y:-207, opacity:1}, propEnd: {x:150, y:-207, opacity:1, ease:Power3.easeOut}, delay: '+=.5'},
+            {type: 'fromTo', id: '#grey', time:.7, propInit: {x:-500, y:125, opacity:1}, propEnd: {x:-250, y:125, opacity:1, ease:Power3.easeOut}, delay: '-=.7'},
+            {type: 'fromTo', id: '#frame2', time:.1, propInit: {autoAlpha:0}, propEnd: {autoAlpha:1}, delay: '-=.5'},
+            {type: 'to', id: '#frame1', time:.7, prop: {x:-78, rotation:-30, ease:Power3.easeOut, transformOrigin:'65% 50%'}, delay: '+=.5'},
+            {type: 'to', id: '#white_sup', time:.7, prop: {x:-430, ease:Power3.easeOut}, delay: 3.7},
+            {type: 'to', id: '#black', time:.7, prop: {x:730, ease:Power3.easeOut}, delay: 3.7},
+            {type: 'to', id: '#white_inf', time:.7, prop: {x:430, ease:Power3.easeOut}, delay: 3.7},
+            {type: 'to', id: '#grey', time:.7, prop: {x:-730, ease:Power3.easeOut}, delay: 3.7},
+            {type: 'from', id: '#txt1', time:.5, prop: {y:-20, opacity:0, ease:Power3.easeOut}, delay: '+=0'},
+            {type: 'from', id: '#txt2', time:.5, prop: {y:20, opacity:0, ease:Power3.easeOut}, delay: '-=.2'},
+            {type: 'to', id: '#txt1', time:.5, prop: {y:-150, opacity:0, ease:Power3.easeOut}, delay: '+=2'},
+            {type: 'to', id: '#txt2', time:.5, prop: {y:150, opacity:0, ease:Power3.easeOut}, delay: '-=.5'},
+            {type: 'from', id: '#txt3', time:.5, prop: {scale:1.3, opacity:0, transformOrigin:'50% 42%', ease:Back.easeOut}, delay: '-=.3'},
+            {type: 'from', id: '#txt4', time:.5, prop: {scale:1.3, opacity:0, transformOrigin:'50% 50%', ease:Back.easeOut}, delay: '-=.2'},
+            {type: 'from', id: '#txt5', time:.5, prop: {scale:1.3, opacity:0, transformOrigin:'50% 60%', ease:Back.easeOut}, delay: '-=.2'},
+            {type: 'to', id: '#txt3', time:.4, prop: {rotationX:90, scaleY:.8, opacity:0, transformOrigin:'50% 42%', ease:Back.easeIn}, delay: '+=2.2'},
+            {type: 'to', id: '#txt4', time:.4, prop: {rotationX:90, scaleY:.8, opacity:0, transformOrigin:'50% 50%', ease:Back.easeIn}, delay: '-=.35'},
+            {type: 'to', id: '#txt5', time:.4, prop: {rotationX:90, scaleY:.8, pacity:0, transformOrigin:'50% 60%', ease:Back.easeIn}, delay: '-=.35'},
+            {type: 'from', id: '#txt6', time:.5, prop: {x:15, opacity:0, ease:Power3.easeOut}, delay: '+=0'},
+            {type: 'from', id: '#txt7', time:.5, prop: {x:-15, opacity:0, ease:Power3.easeOut}, delay: '-=.5'},
+            {type: 'to', id: '#txt6', time:.5, prop: {x:-15, opacity:0, ease:Power3.easeIn}, delay: '+=2.2'},
+            {type: 'to', id: '#txt7', time:.5, prop: {x:15, opacity:0, ease:Power3.easeIn}, delay: '-=.5'},
+            {type: 'from', id: '#logo', time:.7, prop: {scale:.5, opacity:0, transformOrigin:'50% 50%', ease:Power2.easeOut}, delay: '-=.1'},
+            {type: 'to', id: '#cover', time:.5, prop: {autoAlpha:1}, delay: '+=2.5'}
+          ]
+        };
+
+        document.addEventListener('DOMContentLoaded', function(event) {
+            banner = new JDMBanner(document.getElementById('container-banner'),frameObj,timelineObj);
+        });
+    </script>
+</body>
+</html>
