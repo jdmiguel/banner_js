@@ -1,8 +1,9 @@
 var JDMBanner = (function(){
-  function JDMBanner(containerJDMBanner,frameObj,timelineObj){
+  function JDMBanner(containerJDMBanner,imgPath,frameObj,timelineObj){
     JDMBanner.scope = this;
 
     this.containerJDMBanner = containerJDMBanner;
+    this.imgPath = imgPath;
     this.frameData = frameObj;
     this.timelineData = timelineObj;
     this.dataJDMBanner;
@@ -10,7 +11,6 @@ var JDMBanner = (function(){
     this.arrayFrames = [];
     this.arrayElements = [];
 
-    this.imgPath = 'assets/img/';
     this.counterImg = 0;
     this.totalImg = 0;
 
@@ -156,14 +156,6 @@ var JDMBanner = (function(){
 
   JDMBanner.prototype.addPauseAt = function(labelOrSecond){
     JDMBanner.scope.tl.addPause(labelOrSecond);
-  };
-
-  JDMBanner.prototype.addListeners = function(){
-     JDMBanner.scope.containerJDMBanner.addEventListener('click', JDMBanner.scope.goClickTag);
-  };
-
-  JDMBanner.prototype.goClickTag = function(){
-    // CLICKTAG
   };
 
   return JDMBanner;
