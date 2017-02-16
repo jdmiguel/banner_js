@@ -2,7 +2,7 @@
 
 ### DESCRIPTION
 
-This repository offers a diferent way for developing standart banners. When you try this, you will check how your *production performance* has been improved.
+This repository offers a diferent way for developing standart banners. When you try this, you will check how your **production performance** has been improved.
 
 ### REQUERIMENTS
 
@@ -11,7 +11,7 @@ Furthermore, you need to know the [GSAP] (https://greensock.com/gsap) libraries 
 
 ### LAYOUT
 
-You shouldn´t be worry with the banner layout. The only thing you have to do is customizing the data attributes of the div that contains the banner.
+You shouldn´t be worry with the banner layout. The only thing you have to do is *customizing the data attributes of the div that contains the banner*.
 
 ### CUSTOMIZING THE FRAME OBJECT
 
@@ -24,8 +24,8 @@ This object creates a specific timeline based in the [GSAP TIMELINEMAX] (https:/
 At the beginning, there are some properties such as the initial label which the timeline starts or the loops number of the banner...
 After, there is the tweens array. It´s really the hard job... For each element of this array you have the next properties:
 
-* TYPE: This is the main [TWEENMAX] (https://greensock.com/docs/#/HTML5/GSAP/TweenMax/) method. You can choose between *set, to, from or fromTo*.
-* ID: The object id. It´s been composed with *the hash symbol plus the name of the correspondent image src*, without the extension (.png or .jpg). For instance: _'#txt1'_
-* TIME: It´s *the animation duration*. It only works with the to, from and fromTo types.
-* PROPS: *The properties have been changed across the tweens*. In the case of the fromTo type, you must customize both initial and ending properties.
-* DELAY: *The delay time of the tween*.
+* TYPE: This is the *main [TWEENMAX] (https://greensock.com/docs/#/HTML5/GSAP/TweenMax/) method*. You can choose between **set, to, from or fromTo**.
+* ID: **The object id**. It´s been composed with *the hash symbol plus the name of the correspondent image src*, without the extension (.png or .jpg). For instance: *'#txt1'*
+* TIME: It´s **the animation duration**. It only works with the to, from and fromTo types.
+* PROP: **The properties have been changed across the tweens**. In the case of the fromTo type, you must customize both initial and ending properties.
+* DELAY: **The delay time of the tween**.
