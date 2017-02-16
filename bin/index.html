@@ -38,13 +38,13 @@
           /* LOOPS NUMBER (-1 IS INFINITE) */
           loopIteration: -1,
 
-          /* TAG IN WHICH TIMELINE START WHEN THE LOOP STARTS */
+          /* TAG IN WHICH TIMELINE STARTS WHEN THE LOOP STARTS */
           loopLabelInit: 'step_2',
 
-          /* TAG IN WHICH BANNER STOP WHEN THE LAST LOOP ENDS */
+          /* TAG IN WHICH BANNER STOPS WHEN THE LAST LOOP ENDS */
           loopLabelEnd: 'step_27',
 
-          /* BANNER TIMELINE */
+          /* TWEENS ARRAY FOR BUILDING YOUR BANNER TIMELINE */
           arrayTween:[
             {type: 'to', id: '#cover', time:.5, prop: {autoAlpha:0}, delay: '+=0'},
             {type: 'fromTo', id: '#white_sup', time:.8, propInit: {x:-10, y:-400, opacity:1}, propEnd: {x:-20, y:-205, opacity:1, ease:Power3.easeOut}, delay: '+=0'},

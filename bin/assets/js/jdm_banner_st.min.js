@@ -117,9 +117,6 @@ var JDMBanner = (function(){
         case 'fromTo':
           JDMBanner.scope.tl.add(TweenMax.fromTo(i.id, i.time, i.propInit, i.propEnd),i.delay);
         break;
-        case 'call':
-          JDMBanner.scope.tl.add(TweenMax.call(i.callBackFunction),i.delay);
-        break;
       }
     });
 
