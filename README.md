@@ -13,9 +13,15 @@ Furthermore, you need to know the [GSAP] (https://greensock.com/gsap) libraries 
 
 You shouldn´t be worry with the banner layout. The only thing you have to do is *customizing the data attributes of the div that contains the banner*.
 
+### CUSTOMIZING IMG PATH
+
+The only thing you have to do is introducing the correct path in the var (imgPath).
+
 ### CUSTOMIZING THE FRAME OBJECT
 
-In the index.html you will find the frame object. Firstly, You should decide the frames number of your banner (it depends on the animation). Once you have decide it, you must choose the frame order into frame object for positioning the div have been created (with an id equal to name of the frame that you have choosen) inside the banner container div. Finally, you have to push into the frame array the image src for each image you going to use and you have to put in the correct order for positioning into each frame.
+This object creates the layout inside the wrap container.
+
+Firstly, You should decide the frames number of your banner (it depends on the animation). Once you have decide it, you must choose the frame order into frame object for positioning the div have been created (with an id equal to name of the frame that you have choosen) inside the banner container div. Finally, you have to push into the frame array the image src for each image you going to use and you have to put in the correct order for positioning into each frame.
 
 ### CUSTOMIZING THE TIMELINE OBJECT
 
