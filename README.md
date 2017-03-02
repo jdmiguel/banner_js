@@ -1,8 +1,8 @@
-## BANNER STANDART TEMPLATE
+## BANNER PLUGIN JAVASCRIPT
 
 ### DESCRIPTION
 
-This repository offers a diferent way for developing standart banners. When you try this, you will check how your **production performance** has been improved.
+This repository provides a javascript plugin (no JQUERY) for developing banners. When you try this, you will check how your **production performance** has been improved.
 
 ### REQUERIMENTS
 
@@ -22,6 +22,10 @@ The only thing you have to do is introducing the correct path in the var (imgPat
 This object creates the layout inside the wrap container.
 
 Firstly, You should decide the frames number of your banner (it depends on the animation). Once you have decide it, you must choose the frame order into frame object for positioning the div have been created (with an id equal to name of the frame that you have choosen) inside the banner container div. Finally, you have to push into the frame array the image src for each image you going to use and you have to put in the correct order for positioning into each frame.
+
+### CUSTOMIZING THE CLICKTAG
+
+A function called *clicktagFunction* where you can put the clicktag code.
 
 ### CUSTOMIZING THE TIMELINE OBJECT
 
