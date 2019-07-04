@@ -7,7 +7,7 @@ This repository provides a javascript plugin (no JQUERY) for developing banners.
 ### REQUERIMENTS
 
 Before starting, you need to save images to the banner size (as .png or .jpg) because in the template, the images are positioned absolutely, in left 0 and top 0...
-Furthermore, you need to know the [GSAP] (https://greensock.com/gsap) libraries because this template uses them to animate.
+Furthermore, you need to know the [GSAP](https://greensock.com/gsap) libraries because this template uses them to animate.
 
 ### LAYOUT
 
@@ -29,12 +29,12 @@ A function called *clicktagFunction* where you can put the clicktag code.
 
 ### CUSTOMIZING THE TIMELINE OBJECT
 
-This object creates a specific timeline based in the [GSAP TIMELINEMAX] (https://greensock.com/docs/#/HTML5/GSAP/TimelineMax/).
+This object creates a specific timeline based in the [GSAP TIMELINEMAX](https://greensock.com/docs/#/HTML5/GSAP/TimelineMax/).
 
 At the beginning, there are some properties such as the initial label which the timeline starts or the loops number of the banner...
 After, there is the tweens array. It´s really the hard job... For each element of this array you have the next properties:
 
-* TYPE: This is the *main [TWEENMAX] (https://greensock.com/docs/#/HTML5/GSAP/TweenMax/) method*. You can choose between **set, to, from or fromTo**.
+* TYPE: This is the *main [TWEENMAX](https://greensock.com/docs/#/HTML5/GSAP/TweenMax/) method*. You can choose between **set, to, from or fromTo**.
 * ID: **The object id**. It´s been composed with *the hash symbol plus the name of the correspondent image src*, without the extension (.png or .jpg). For instance: *'#txt1'*
 * TIME: It´s **the animation duration**. It only works with the to, from and fromTo types.
 * PROP: **The properties have been changed across the tweens**. In the case of the fromTo type, you must customize both initial and ending properties.
